@@ -1,23 +1,21 @@
-package Q7;
+package Q8;
 
-import javax.swing.JFrame;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Date now = new Date();
+        Scanner sc = new Scanner(System.in);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
+        System.out.print("Enter a sentence: ");
+        String sentence = sc.nextLine();
 
-        JFrame frame = new JFrame();
+        int index = sentence.indexOf("!");
 
-        frame.setTitle(sdf.format(now));
-        frame.setSize(400, 200);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        String part1 = sentence.substring(0, index);
+        String part2 = sentence.substring(index + 1);
+        part2 = part2.replace(",", "");
+        System.out.println(part1.trim());
+        System.out.println(part2.trim());
     }
 }
-
-

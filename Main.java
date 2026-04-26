@@ -1,15 +1,24 @@
-package Q5;
+package Q6;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import javax.swing.JFrame;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Date today = new Date();
+        Scanner sc = new Scanner(System.in);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("EEEE, MMMM dd, yyyy");
+        System.out.print("Enter width: ");
+        int w = sc.nextInt();
+        System.out.print("Enter height: ");
+        int h = sc.nextInt();
+        System.out.print("Enter title: ");
+        String title = sc.next();
 
-        System.out.println(sdf.format(today));
+        JFrame frame = new JFrame();
+        frame.setTitle(title);
+        frame.setSize(w, h);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
     }
 }
